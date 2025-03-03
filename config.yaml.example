@@ -1,0 +1,16 @@
+clickhouse:
+  host: localhost
+  port: 9000
+  user: default
+  password: 
+  database: ethereum
+
+analysis:
+  cache_enabled: true
+  cache_ttl: 3600  # 缓存过期时间（秒）
+  batch_size: 1000 # 批处理大小
+  max_workers: 4   # 最大工作线程数
+
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s' 

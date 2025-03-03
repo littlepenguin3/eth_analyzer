@@ -1,0 +1,46 @@
+clickhouse:
+  host: localhost
+  port: 9000
+  user: default
+  password: 
+  database: ethereum
+
+neo4j:
+  uri: bolt://localhost:7687
+  user: neo4j
+  password: 
+  database: ethereum
+
+analysis:
+  cache_enabled: true
+  cache_ttl: 3600
+  batch_size: 1000
+  
+graph_schema:
+  relationships:
+    - name: TRANSFERS_TO
+      from_label: Address
+      to_label: Address
+    - name: INTERACTS_WITH
+      from_label: Address
+      to_label: Contract
+    - name: CREATED_CONTRACT
+      from_label: Address
+      to_label: Contract
+  node_labels:
+    - name: Address
+      properties:
+        - name: address
+          type: string
+        - name: balance
+          type: decimal
+        - name: type
+          type: string
+    - name: Contract
+      properties:
+        - name: address
+          type: string
+        - name: creator
+          type: string
+        - name: creation_tx
+          type: string 
