@@ -26,6 +26,7 @@ wheels/
 # VS Code
 .vscode/
 *.code-workspace
+.history/
 
 # PyCharm
 .idea/
